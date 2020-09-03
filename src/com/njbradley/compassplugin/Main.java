@@ -6,7 +6,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.World.Environment;
-import org.bukkit.craftbukkit.v1_16_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_16_R2.inventory.CraftItemStack;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -16,7 +16,7 @@ import com.njbradley.compassplugin.commands.ListPlayers;
 import com.njbradley.compassplugin.commands.RemovePlayer;
 import com.njbradley.compassplugin.listeners.Listeners;
 
-import net.minecraft.server.v1_16_R1.NBTTagCompound;
+import net.minecraft.server.v1_16_R2.NBTTagCompound;
 
 public class Main extends JavaPlugin {
 	World world;
@@ -36,7 +36,7 @@ public class Main extends JavaPlugin {
   }
 		
 	public ItemStack createTrackerCompass(Location loc) {
-		net.minecraft.server.v1_16_R1.ItemStack stack = CraftItemStack.asNMSCopy(new ItemStack(Material.COMPASS));
+		net.minecraft.server.v1_16_R2.ItemStack stack = CraftItemStack.asNMSCopy(new ItemStack(Material.COMPASS));
 		NBTTagCompound tag = new NBTTagCompound();
 		NBTTagCompound postag = new NBTTagCompound();
 		NBTTagCompound nametag = new NBTTagCompound();
