@@ -1,5 +1,6 @@
 package com.njbradley.compassplugin.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,7 +19,7 @@ public class RemovePlayer implements CommandExecutor {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		sender.sendMessage("You are no longer part of the manhunt.");
+		Bukkit.broadcastMessage(((Player) sender).getDisplayName() + " is no longer part of the manhunt.");
 		remove ((Player) sender);
 		return true;
 	}
