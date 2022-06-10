@@ -23,7 +23,8 @@ public class AddHunter implements CommandExecutor {
 		Player player = (Player) sender;
 		Bukkit.broadcastMessage(player.getDisplayName() + " is now a hunter.");
 		remover.remove(player);
-		player.getInventory().setItem(8, plugin.createTrackerCompass(null));
+		plugin.giveTracker(player, null);
+//		player.getInventory().setItem(8, plugin.createTrackerCompass(null));
 		if (sender instanceof Player) {
 			plugin.hunters.add(new PlayerData(player));
 			return true;

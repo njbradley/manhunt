@@ -20,8 +20,8 @@ import org.bukkit.inventory.PlayerInventory;
 import com.njbradley.compassplugin.Main;
 import com.njbradley.compassplugin.PlayerData;
 
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.TextComponent;
+//import net.md_5.bungee.api.ChatMessageType;
+//import net.md_5.bungee.api.chat.TextComponent;
 
 public class Listeners implements Listener {
   Main plugin;
@@ -109,7 +109,8 @@ public class Listeners implements Listener {
     Player player = event.getPlayer();
     for (PlayerData hd : plugin.hunters) {
       if (hd.player == player) {
-        player.getInventory().setItem(8, plugin.createTrackerCompass(null));
+    	  plugin.giveTracker(player, null);
+//        player.getInventory().setItem(8, plugin.createTrackerCompass(null));
         break;
       }
     }
@@ -162,15 +163,17 @@ public class Listeners implements Listener {
               tracking_loc = hunter.getFirstLocation(hunter.player.getWorld().getEnvironment());
             }
             if (tracking_loc != null) {
-              if (playerInv.getItemInMainHand().getType() == Material.COMPASS) {
-                playerInv.setItemInMainHand(plugin.createTrackerCompass(tracking_loc));
-              } else {
-                playerInv.setItemInOffHand(plugin.createTrackerCompass(tracking_loc));
-              }
-              player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText("Currently tracking " + runner.player.getDisplayName() + "."));
+            	plugin.clearTracker(player);
+            	plugin.giveTracker(player, tracking_loc);
+//              if (playerInv.getItemInMainHand().getType() == Material.COMPASS) {
+//                playerInv.setItemInMainHand(plugin.createTrackerCompass(tracking_loc));
+//              } else {
+//                playerInv.setItemInOffHand(plugin.createTrackerCompass(tracking_loc));
+//              }
+//              player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText("Currently tracking " + runner.player.getDisplayName() + "."));
             }
           } else {
-            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText("No runners to track."));
+//            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText("No runners to track."));
           }
         }
       }
