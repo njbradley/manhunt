@@ -1,0 +1,4 @@
+/external_libs/
+*.class
+*.jar
+.DS_Store

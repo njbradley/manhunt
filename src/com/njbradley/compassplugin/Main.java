@@ -6,7 +6,6 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.World.Environment;
-import org.bukkit.craftbukkit.v1_18_R2.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,8 +15,6 @@ import com.njbradley.compassplugin.commands.AddRunner;
 import com.njbradley.compassplugin.commands.ListPlayers;
 import com.njbradley.compassplugin.commands.RemovePlayer;
 import com.njbradley.compassplugin.listeners.Listeners;
-
-import net.minecraft.nbt.NBTTagCompound;
 
 public class Main extends JavaPlugin {
 	World world;
