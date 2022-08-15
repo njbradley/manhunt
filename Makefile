@@ -7,7 +7,7 @@ classpath = external_libs/* src/
 all: $(classes)
 
 clean:
-	 rm $(find . -name '*.class')
+	 rm $$(find . -name '*.class')
 
 %.class: %.java
 	$(JAVAC) $< --class-path $(call classpathify,$(classpath))

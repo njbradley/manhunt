@@ -2,17 +2,20 @@ name: CompassPlugin
 prefix: CompassPlugin
 main: com.njbradley.compassplugin.Main
 version: 1.0
-api-version: "1.16"
+api-version: "1.19"
 commands:
      hunter:
-        description: yo
-        usage: /<command>
+        description: Add yourself or specified player to hunters.
+        usage: "Usage: /<command> [player]"
      runner:
-        description: yo
-        usage: /<command>
+        description: Add yourself or specified player to runners.
+        usage: "Usage: /<command> [player]"
      remove:
-        description: yo
-        usage: /<command>
+        description: Remove yourself or specified player from the manhunt.
+        usage: "Usage: /<command> [player]"
      players:
-        description: yo
-        usage: /<command>
+        description: Print a list of all players in the manhunt.
+        usage: "Usage: /<command>"
+     settings:
+        description: Print/set manhunt settings.
+        usage: "Usage: /<command>"
