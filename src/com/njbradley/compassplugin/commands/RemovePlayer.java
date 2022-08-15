@@ -52,7 +52,6 @@ public class RemovePlayer implements CommandExecutor {
         for (HunterData ht : plugin.hunters) {
             if (ht.trackedPlayer != null && ht.trackedPlayer.player == player) {
                 ht.trackedPlayer = null;
-                plugin.updateTracker(ht);
             }
         }
         for (PlayerData rd : plugin.hunters) {
