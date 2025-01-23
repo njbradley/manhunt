@@ -110,15 +110,19 @@ public class Main extends JavaPlugin {
 
         //String nbt = "{\"LodestonePos\":{\"X\":" + x + ",\"Y\":" + y + ",\"Z\":" + z + "},\"LodestoneDimension\":\"" + dimension
             //+ "\",\"LodestoneTracked\":" + (runner == null ? 1 : 0) + "b, \"display\": {\"Name\":'{\"text\":\"" + compassName + "\"}'}}";
-        String nbt = "[minecraft:lodestone_tracker={target:{pos:[" + x + "," + y + "," + z + "],dimension:'" + dimension + "'},tracked:false}]";
+        String nbt = "[minecraft:lodestone_tracker={target:{pos:[" + x + "," + y + "," + z + "],dimension:'" + dimension + "'},tracked:false},"
+                + "minecraft:custom_name='\"" + compassName + "\"']";
+
 
         String command;
         getServer().getWorlds().get(0).setGameRule(GameRule.SEND_COMMAND_FEEDBACK, false);
         if (slotname.equals("")) {
             isPlayerRecievingItem = true;
+            getLogger().info("Command:" + "give @s compass" + nbt);
             getServer().dispatchCommand(player, "give @s compass" + nbt);
             isPlayerRecievingItem = false;
         } else {
+            getLogger().info("Command:" + "item replace entity @s " + slotname + " with compass" + nbt);
             getServer().dispatchCommand(player, "item replace entity @s " + slotname + " with compass" + nbt);
         }
         getServer().getWorlds().get(0).setGameRule(GameRule.SEND_COMMAND_FEEDBACK, true);
