@@ -108,8 +108,9 @@ public class Main extends JavaPlugin {
         }
         hunter.trackedPlayerToggle = !hunter.trackedPlayerToggle;
 
-        String nbt = "{\"LodestonePos\":{\"X\":" + x + ",\"Y\":" + y + ",\"Z\":" + z + "},\"LodestoneDimension\":\"" + dimension
-            + "\",\"LodestoneTracked\":" + (runner == null ? 1 : 0) + "b, \"display\": {\"Name\":'{\"text\":\"" + compassName + "\"}'}}";
+        //String nbt = "{\"LodestonePos\":{\"X\":" + x + ",\"Y\":" + y + ",\"Z\":" + z + "},\"LodestoneDimension\":\"" + dimension
+            //+ "\",\"LodestoneTracked\":" + (runner == null ? 1 : 0) + "b, \"display\": {\"Name\":'{\"text\":\"" + compassName + "\"}'}}";
+        String nbt = "[minecraft:lodestone_tracker={target:{pos:[" + x + "," + y + "," + z + "],dimension:'" + dimension + "'},tracked:false}]";
 
         String command;
         getServer().getWorlds().get(0).setGameRule(GameRule.SEND_COMMAND_FEEDBACK, false);

@@ -4,7 +4,7 @@ classes = $(sources:.java=.class)
 
 classpathify = $(subst $(eval) ,:,$(wildcard $1))
 classpath = external_libs/* src/
-all: $(classes)
+all: jar
 
 clean:
 	 rm $$(find . -name '*.class')
